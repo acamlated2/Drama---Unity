@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PebbleScript : MonoBehaviour
 {
-    private bool _groundHit;
+    public bool _groundHit;
 
     private GameObject _medea;
 

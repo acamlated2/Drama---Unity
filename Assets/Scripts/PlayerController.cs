@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject _returnPos;
 
-    [SerializeField] private float lureDistance = 10;
+    [SerializeField] private float lureDistance = 20;
 
     private void Awake()
     {

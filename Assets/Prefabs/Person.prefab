@@ -135,8 +135,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!114 &5911810015752566950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b84145d8a4c54744b209b819ed859ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerMax: 2
+  lureDistance: 20
 --- !u!195 &6770013911841659320
 NavMeshAgent:
   m_ObjectHideFlags: 0
