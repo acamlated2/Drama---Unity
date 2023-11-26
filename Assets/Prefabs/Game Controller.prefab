@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026b4f61271bb2c4fb9203de5ea2fc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XButton: {fileID: 7848694706295490724, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  YButton: {fileID: -3985555372460071444, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  AButton: {fileID: -3509916344695008118, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  BButton: {fileID: 4800713391652058509, guid: c348712bda248c246b8c49b3db54643f, type: 3}

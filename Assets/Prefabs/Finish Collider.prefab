@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5562818599891057745}
   - component: {fileID: 210043409879419193}
   - component: {fileID: 5230848213260135200}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Finish Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

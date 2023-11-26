@@ -17,6 +17,8 @@ public class XRAlyxGrabInteractable : XRGrabInteractable
 
     private bool _canJump = true;
 
+    [SerializeField] private ParticleSystem breakingSystem;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -78,5 +80,27 @@ public class XRAlyxGrabInteractable : XRGrabInteractable
                                      Mathf.Sin(angleInRadian) * jumpSpeed;
 
         return jumpVelocityVector;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            DestroyObject();
+        }
+    }
+
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
+        
+        // spawn particles
+        Vector3 pos = transform.position;
+        pos.y += 1;
+        ParticleSystem system = Instantiate(breakingSystem, pos, transform.rotation);
+        
+        // lure
+        GameObject medea = GameObject.FindGameObjectWithTag("Medea");
+        medea.GetComponent<PlayerController>().Lure(transform.position);
     }
 }

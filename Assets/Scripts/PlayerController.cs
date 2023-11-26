@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour
 {
     private NavMeshAgent _agent;
 
-    [SerializeField] private float timerMax = 2;
+    [SerializeField] private float timerMax = 5;
     private float _timer = 5;
 
     private GameObject _returnPos;
-
-    [SerializeField] private float lureDistance = 20;
+    
+    [SerializeField] private ParticleSystem luringParticleSystem;
 
     private void Awake()
     {
@@ -25,13 +25,24 @@ public class PlayerController : MonoBehaviour
     public void Lure(Vector3 pos)
     {
         float distance = Vector3.Distance(transform.position, pos);
-        if (distance <= lureDistance)
+        RaycastHit hit;
+        Vector3 direction = transform.position - pos;
+        
+        if (Physics.Raycast(pos, direction, out hit, distance))
+        {
+            Debug.Log("Raycast hit something: " + hit.transform.name);
+        }
+        else
         {
             _agent.SetDestination(pos);
             _timer = timerMax;
+                
+            // particle
+            Vector3 particlePos = pos;
+            particlePos.y += 1;
+            ParticleSystem system =
+                Instantiate(luringParticleSystem, particlePos, Quaternion.LookRotation(direction));
         }
-        
-        Debug.Log(distance);
     }
 
     private void Update()
