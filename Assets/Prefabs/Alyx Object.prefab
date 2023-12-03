@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 469732795704048901}
   - component: {fileID: 3973558083191580882}
   - component: {fileID: 4544293450932798239}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Alyx Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   velocityThreshold: 2
   jumpAngleInDegree: 60
+  breakingSystem: {fileID: 0}
 --- !u!1001 &2148950286918648642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +223,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c8f0c2956287ef7419ef459ee2d53411, type: 3}
       propertyPath: m_Name
       value: Vase_Amphora
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c8f0c2956287ef7419ef459ee2d53411, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c8f0c2956287ef7419ef459ee2d53411, type: 3}
       propertyPath: m_LocalPosition.x
