@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - ReturnPosition
   - CameraPosition
+  - Alyx Object
   layers:
   - Default
   - TransparentFX

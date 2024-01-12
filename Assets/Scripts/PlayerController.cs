@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float timerMax = 5;
     private float _timer = 5;
 
-    private GameObject _returnPos;
+    public GameObject returnPos;
     
     [SerializeField] private ParticleSystem luringParticleSystem;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         
-        _returnPos = GameObject.FindGameObjectWithTag("ReturnPosition");
+        returnPos = GameObject.FindGameObjectWithTag("ReturnPosition");
     }
 
     public void Lure(Vector3 pos)
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
             if (_timer <= 0)
             {
-                _agent.SetDestination(_returnPos.transform.position);
+                _agent.SetDestination(returnPos.transform.position);
 
                 _timer = timerMax;
             }

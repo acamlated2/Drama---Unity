@@ -3,7 +3,13 @@ guid: 24ffc13a7e288cf4884ac00d51b7bfe5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_InteractionManager: {instanceID: 0}
+  - m_CustomReticle: {instanceID: 0}
+  - m_AttachTransform: {instanceID: 0}
+  - m_SecondaryAttachTransform: {instanceID: 0}
+  - breakingSystem: {fileID: 4759685339248548160, guid: fc8563908bd64644c8b7b9e63d60bbfa, type: 3}
+  - spawnPointPrefab: {fileID: 8261407834187484242, guid: ab7abf0a9239aff4da67b28108bfa7da, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

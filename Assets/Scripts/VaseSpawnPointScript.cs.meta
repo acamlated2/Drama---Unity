@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 3460059302aa1d04f8539b9ef0da0ff4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - vasePrefab: {fileID: 771709282548930664, guid: c9d6edd0be41e0349989552684b4c6a0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

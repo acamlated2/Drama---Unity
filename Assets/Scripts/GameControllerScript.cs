@@ -22,6 +22,11 @@ public class GameControllerScript : MonoBehaviour
 
     private bool _switching;
 
+    private GameObject _medea;
+
+    [SerializeField] private GameObject[] checkpoints;
+    private GameObject _lastCollidedCheckpoint;
+
     private void OnEnable()
     {
         XButton.action.performed += ScrollCameraDown;
@@ -35,11 +40,21 @@ public class GameControllerScript : MonoBehaviour
         camPositions = GameObject.FindGameObjectsWithTag("CameraPosition");
 
         _player = GameObject.FindGameObjectWithTag("Player");
+        _medea = GameObject.FindGameObjectWithTag("Medea");
+        _lastCollidedCheckpoint = checkpoints[0];
     }
 
     private void Update()
     {
-        
+        for (int i = 0; i < checkpoints.Length; i++)
+        {
+            if (checkpoints[i].GetComponent<CheckpointColliderScript>().collided)
+            {
+                _lastCollidedCheckpoint = checkpoints[i];
+                _medea.GetComponent<PlayerController>().returnPos = _lastCollidedCheckpoint;
+                break;
+            }
+        }
     }
 
     private void ScrollCameraUp(InputAction.CallbackContext ctx)

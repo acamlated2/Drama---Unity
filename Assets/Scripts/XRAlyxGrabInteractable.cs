@@ -18,11 +18,23 @@ public class XRAlyxGrabInteractable : XRGrabInteractable
     private bool _canJump = true;
 
     [SerializeField] private ParticleSystem breakingSystem;
+
+    [SerializeField] private GameObject spawnPointPrefab;
+    private GameObject _spawnPoint;
     
     protected override void Awake()
     {
         base.Awake();
         _interactableRigidbody = GetComponent<Rigidbody>();
+
+        GameObject newSpawnPoint = Instantiate(spawnPointPrefab, transform.position, Quaternion.identity);
+        _spawnPoint = newSpawnPoint;
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        _spawnPoint.GetComponent<VaseSpawnPointScript>().StartTimer();
     }
 
     private void Update()
